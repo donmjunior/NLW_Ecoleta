@@ -1,5 +1,11 @@
-function changePage(event){
-    window.location.href = "http://127.0.0.1:5500/create-point.html"
-}
+const searchButton = document.querySelector("#page-home main a")
+const modal = document.querySelector("#modal")
+const close = document.querySelector("#modal .header a")
 
-document.querySelector("a[name=botao]").addEventListener("change", changePage)
+searchButton.addEventListener("click", () => {
+    modal.classList.remove("hide")
+})
+
+close.addEventListener("click", () => {
+    modal.classList.add("hide")
+})

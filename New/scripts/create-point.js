@@ -45,6 +45,7 @@ document.querySelector("select[name=uf]").addEventListener("change", getCities)
 // Código referente à grid 'Itens de coleta'
 // Recebe todos os itens contidos em um bloco 'li'
 const itemsToCollect = document.querySelectorAll(".items-grid li")
+const collectedItems = document.querySelector("input[name=items]")
 for (const item of itemsToCollect){
     item.addEventListener("click", handleSelectedItem)
 }
@@ -66,11 +67,13 @@ function handleSelectedItem(event){
         const filteredItem = selectedItems.filter( item => {
             return item != itemId
         })
-        console.log(filteredItem)
-    }//else{
-
-    // }
-    // Senão, adicioná-lo
-
-    // Atualizar o campo escondido 'input hidden' com os dados selecionados
+        selectedItems = filteredItem
+        // console.log(selectedItems)
+        // Senão, adicioná-lo
+    }else{
+        selectedItems.push(itemId)
+    }
+    // console.log(selectedItems)
+        // Atualizar o campo escondido 'input hidden' com os dados selecionados
+    collectedItems.value = selectedItems
 }

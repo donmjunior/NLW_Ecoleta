@@ -4,7 +4,8 @@
     --title-color: #322153;
     /*Variável criada para alteração de cores. Útil para que,
     caso precise alterá-la, seja feita por aqui e uma única vez.*/
-    --primary-color: #34cd79
+    --primary-color: #34cd79;
+    --input-color: #f0f0f5;
 }
 
     /*Seletor que referencia todos os outros seletores (blocos do html)*/

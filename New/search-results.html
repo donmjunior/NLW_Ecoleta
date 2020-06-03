@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--Tipo do documento-->
+
+<html lang="pt_br">
+<!--Início do documento (Inicia automaticamente  com 'lang' (linguagem) "en" 
+    (English)-->
+
+<head>
+    <!--Cabeçalho-->
+
+    <meta charset="UTF-8">
+    <!--"<meta 'INFORMAÇÃO'>" Define Informações de meta dados-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resultado da pesquisa</title>
+    <!--Título do documento-->
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <!--Puxa o link da origem da fonte que será utilizada para a formatação 
+        dos textos no documento. Aqui neste caso estão sendo utilizados dois tipos de fontes,
+        'Roboto' e 'Ubuntu'-->
+
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/search-results.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <!--Puxa os estilos CSS da pasta 
+        '/styles/main.css'-->
+
+</head>
+<!--Término do cabeçalho-->
+
+<body>
+    <!--Corpo do documento-->
+
+    <div id="page-search-results">
+        <!--Escrevendo '#page-home' + Enter o VSCode cria automaticamente
+        a linha de código '<div id="page-home"></div>' com a identificação ('id') assim como foi
+        descrita-->
+
+        <header>
+            <!--Representa um grupo de suporte adicional ao documento-->
+
+            <img src="/assets/logo.svg" alt="Logomarca">
+            <!--No lugar do texto será inserido a logo
+                que já contém o texto-->
+
+            <a href="/">
+                <span></span>
+                <!--Este elemento é inserido para que seja possível
+                    inserirmos uma imagem neste local pelo CSS-->
+                Voltar para home</a>
+
+        </header>
+
+        <main>
+            <h4>
+                <strong>2 pontos </strong>encontrados
+            </h4>
+            <div class="cards">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=874&q=80" alt="Colectoria">
+                    <h1>Colectoria</h1>
+                    <h3>Resíduos eletrônicos, lâmpadas</h3>
+                    <p>Curitiba, Paraná <br/> Rua Rio Jaguaribe, Bairro Alto <br/>Nº 944</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1516992654410-9309d4587e94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Colectoria">
+                    <h1>Colectoria</h1>
+                    <h3>Resíduos eletrônicos, lâmpadas</h3>
+                    <p>Curitiba, Paraná <br/> Rua Rio Jaguaribe, Bairro Alto <br/>Nº 944</p>
+                </div>
+            </div>
+        </main>
+
+    </div>
+    <script src="/scripts/search-results.js"></script>
+</body>
+<!--Término do Corpo-->
+
+</html>
+<!--Fim do documento-->
