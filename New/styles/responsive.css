@@ -1,0 +1,42 @@
+
+/*O '@media' nos permite inserir algumas regras de funcionamento do documento*/
+@media (max-width: 900px){/*Enquanto a tela estiver até o tamanho máximo de 900px...*/
+    /*...passará a realizar os seguintes comandos*/
+    #page-home{
+        background-position-x: 75vw;/*Empurra a imagem '70vw' para a lateral não deixando que o
+        texto "encavale" sobre a imagem*/
+    }
+
+    #page-home .content{
+        align-items: center;/*Alinha todos os blocos contidos em '.content'*/
+        text-align: center;/*Centraliza os textos do bloco '.content'*/
+    }
+
+    #page-home header a{
+        position: absolute;/*Faz com que o objeto contido no bloco 'a' consiga ficar uma camada
+        acima de qualquer outra imagem*/
+        bottom: 48px;
+        /*Para conseguir alinhar este elemento à tela é preciso "forçar"*/
+        left: 50%;/*Posiciona o objeto exatamente para a metade da tela da esquerda para direita,
+        no entanto, ele considera a lateral do objeto, e não o centro*/
+        transform: translateX(-50%);/*Aqui "forçamos" com que o ponto de origem do objeto seja
+        '-50%', ou seja, a metade do mesmo*/
+    }
+
+    #page-home main{/*Como todo este bloco é um 'display: flex', com uma linha de código é
+        possível alinhar os blocos internos*/
+        align-items: center;
+    }
+}
+
+@media (min-width: 1700px){
+    #page-home{
+        background-position-x: 40vw;
+    }
+}
+
+@media (max-height: 740px){
+    #page-home{
+        background-position-y: 5vw;
+    }
+}

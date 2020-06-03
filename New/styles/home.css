@@ -1,0 +1,134 @@
+
+#page-home {
+    /*A '#page-home' é o bloco que enquadra todo o bloco '<div class="content">'*/
+    height: 100vh;
+    background: url("../assets/home-background.svg") no-repeat;
+    background-position: 35vw bottom;
+}
+
+#page-home header {
+    /*Esta forma de escrita desta linha de código promove o efeito cascata, visto
+    que o bloco 'header' está contido dentro do bloco 'div #page-home'*/
+    margin-top: 48px;
+    /*Insere um espaço no bloco 'header' na página*/
+    display: flex;
+    /*Se o elemento é exibido e o espaço é reservado para ele,
+    o torna flexível para enquadramento*/
+    align-items: center;
+    /*Cuida do alinhamento do elemento*/
+    justify-content: space-between;
+    /*Faz o enquadramento dos elementos*/
+}
+
+#page-home .content {
+    height: 100%;
+    width: 90%;
+    /*Configura a largura de espaçamento para dinamismo no ajuste da página*/
+    max-width: 1100px;
+    /*Configura o tamanho máximo do elemento*/
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#page-home header a {
+    display: flex;
+    color: var(--title-color);
+    /*Este comando altera a cor das fontes neste bloco*/
+    font-weight: 700;
+    /*Este comando altera o peso da fonte (neste caso, fica em negrito) neste
+    bloco*/
+}
+
+#page-home header a span {
+    display: flex;
+    /*Dessa forma será possível exibir a imagem 'log-in' junto ao texto, porém, não
+    é o suficiente para deixá-lo ao lado do mesmo. Para isso, codamos a linha '#page-home header a'
+    no CSS para que isso seja possível.*/
+    background-image: url("../assets/log-in.svg");
+    width: 20px;
+    height: 20px;
+    margin-right: 16px;
+}
+
+#page-home main {
+    max-width: 560px;
+    /*Altura máxima do bloco*/
+    flex: 1;
+    display: flex;
+    /*Torna os elementos internos do bloco flexíveis*/
+    flex-direction: column;
+    /*Torna essa flexibilidade, esse flow, pela coluna*/
+    justify-content: center;
+    /*Centraliza os elementos contidos no bloco*/
+}
+
+#page-home main h1 {
+    font-size: 54px;
+}
+
+#page-home main p {
+    font-size: 24px;
+    /*Tamanho da fonte de texto*/
+    line-height: 38px;
+    /*Diferente do box, onde usamos o comando 'height' para ajustar a
+    altura, para textos utilizamos 'line-height' especificamente para textos*/
+    margin-top: 24px;
+    /*Como zeramos as margens de todos os elementos do documento, precisamos
+    colocá-la caso queiramos aumentar este espaçamento*/
+}
+
+#page-home main a {
+    width: 100%;/*Este bloco ocupará a largura total do bloco 'main'*/
+    max-width: 360px;/*Porém, essa largura não passará de '360px'*/
+    height: 72px;/*Altura do bloco*/
+    border-radius: 8px;/*Cria uma borda arredondada ao bloco. Caso seja colocado um segundo
+    valor na instrução, daria um design bem diferenciado ao objeto, ex.:
+    'border-radius: 8px 12px'*/
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    transition: 400ms;/*Faz com que a cor do objeto altere quando o mouse passar por cima do mesmo
+    neste intervalo de tempo, dando um aspecto mais elegante e suave nessa estilização*/
+}
+
+#page-home main a:hover{/*Com o acréscimo do comando ':hover' é possível inserir uma estilização
+    especial ao objeto, como alterar a cor de um botão quando o mouse passar por cima,
+    por exemplo*/
+    background-color: #2fb86e;
+}
+
+#page-home main a span {
+    /*Primeiro é preciso criar o bloco dando uma medida à ele, e é isso que essas duas primeiras
+    funções fazem*/
+    width: 72px;
+    height: 72px;
+    background-color: rgba(0, 0, 0, 0,08);/*Neste caso, bloco recebe apenas uma transparência*/
+    border-top-left-radius: 8px;/*Comando bem específico, cria uma borda no canto superior
+    esquerdo*/
+    border-bottom-left-radius: 8px;/*Cria uma borda no canto inferior esquerdo*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page-home main a span::after{/*Este 'span', se reparar, se comporta de forma diferente do
+    anterior (no bloco 'header'), por isso, para que consigamos inserir uma imagem neste, é
+    necessário utilizar este recurso*/
+    content: "";/*Criamos um conteúdo dentro do 'span', porém, ainda está vazio*/
+    background-image: url("../assets/search.svg");
+    width: 20px;
+    height: 20px;
+}
+
+#page-home main a strong{
+    /*Por padrão, o bloco 'strong' já vem com a formatação de texto 'font-weight' como 'bold',
+    portanto, não será necessário inserí-la*/
+    color: white;
+    flex: 1;/*O comando 'flex: 1;' faz com que o bloco ocupe todo o espaço no bloco "pai".
+    Como o bloco "pai" '#page-home main a' está com o comando 'display: flex;', então o bloco
+    'strong' ocupará todo o tamanho lateral, por padrão*/
+    text-align: center;/*E agora é possível realizar o alinhamento central do texto dentro deste
+    bloco*/
+}
