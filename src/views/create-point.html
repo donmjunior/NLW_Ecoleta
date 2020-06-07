@@ -54,7 +54,13 @@ principal do corpo ('body') de cada arquivo #}
                 </div>
                 <div class="field">
                     <label for="phone">Telefone</label>
-                    <input type="text" name="phone" placeholder="(  )" required="required">
+                    <input 
+                    type="text" 
+                    name="phone" 
+                    onkeyup="mascara( this, mtel );" 
+                    maxlength="15"
+                    placeholder="(  )" 
+                    required="required">
                 </div>
             </div>
 
