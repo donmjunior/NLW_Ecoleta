@@ -1,0 +1,42 @@
+/* Atalho para criar a linha de comentários é 'Ctrl + /' */
+:root {
+    /*Entro na pasta raiz do sistema. Útil para inserção de propriedades e variáveis*/
+    --title-color: #322153;
+    /*Variável criada para alteração de cores. Útil para que,
+    caso precise alterá-la, seja feita por aqui e uma única vez.*/
+    --primary-color: #34cd79;
+    --input-color: #f0f0f5;
+}
+
+    /*Seletor que referencia todos os outros seletores (blocos do html)*/
+* {
+    /*Zera as margens dos blocos*/
+    margin: 0;
+    /*Zera o preenchimento dos blocos*/
+    padding: 0;
+    /*O 'form' terá o tamanho da borda do box quando escolho para a propriedade 'box-sizing' o
+    argumento 'border-box*/
+    box-sizing: border-box;
+}
+
+html {
+    /*Chama o identificador html (nesse caso o próprio 'html') para inserir estilos*/
+    font-family: 'Roboto', sans-serif;
+    /*Estilo de fonte*/
+}
+
+a {
+    text-decoration: none;
+    /*Este comando insere ou retira formatação decorativa ao texto em 
+    todos os elementos 'a'*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--title-color);
+}
+
+body {
+    background: #f0f0f5;
+    -webkit-font-smoothing: antialiased;
+}
