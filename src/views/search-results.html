@@ -1,0 +1,59 @@
+{# Sem esta linha '{% extends "layout.html" %}', não será possível com que o arquivo consiga herdar as
+linhas de códigos comum para a criação da página 'index.html' contidas no 'layout.html' #}
+{% extends "layout.html" %}
+{# Cria-se uma variável no arquivo da página (que pode ser declarada antes da sua real posição) para que
+o arquivo 'layout.html' posicione-a no seu devido local. Neste caso, essa variável corresponde à 'div'
+principal do corpo ('body') de cada arquivo #}
+{% set bodyId = "page-search-results" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/search-results.css">
+{% endblock styles %}
+
+{% block content %}
+    {% include "partials/page-header.html" %}
+
+    <main>
+        {% if total > 0 %}
+            <h4>
+                <strong>{{total}}
+                    pontos
+                </strong>encontrados
+            </h4>
+
+            <div class="cards">
+                {# Inserir uma função 'for' do nunjucks => n-for. O 'iterator' deve ser de nome exatamente
+            igual ao escrito no arquivo 'server.js' #}
+                {% for place in places %}
+                    <div class="card">
+                        <img src="{{place.image}}" alt="{{place.name}}">
+                        <h1>{{place.name}}</h1>
+                        <h3>{{place.items}}</h3>
+                        <p>{{place.city}},
+                            {{place.state}}
+                            <br/>
+                            {{place.address}},
+                            {{place.address2}}
+                            <br/>Nº
+                            {{place.number}}
+                            <br/>Telefone:
+                            {{place.phone}}</p>
+                    </div>
+                {% endfor %}
+            </div>
+
+            {%else%}
+
+            <h4>
+                <strong>Nenhum
+                </strong>
+                ponto encontrado</h4>
+
+        {% endif %}
+    </main>
+
+{% endblock content %}
+
+{% block scripts %}
+    <script src="/scripts/search-results.js"></script>
+{% endblock scripts %}

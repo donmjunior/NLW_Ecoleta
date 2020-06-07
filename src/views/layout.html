@@ -1,0 +1,32 @@
+{# Neste arquivo 'layout.html' apenas ficarão as linhas de códigos que se repetem em todos os outros
+arquivos HTML que compõem as páginas, ou seja, tudo aquilo que não se repete fica na sua respactiva
+página (arquivo). Portanto, seguindo este raciocínio, são criados 'blocks' que terão nomes e posições
+específicas no código onde os outros arquivos terão implementações específicas para cada página. #}
+<!DOCTYPE html>
+<html lang="pt_br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {# A ideia de utilizar este bloco abaixo com o conteúdo inserido seria apenas para que, caso na
+        página filho não haja algum conteúdo de título, será substituído por este título padrão, que
+        no caso será "Ecoleta", mas se houver, este título será desconsiderado e prevalecerá a exibição
+        do título do arquivo filho. Se bem observar, o mesmo acontece com todos os outros blocos criados
+        neste arquivo. #}
+        {% block title %}
+            <title>Ecoleta</title>
+        {% endblock title %}
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles/main.css">
+        {% block styles %}{% endblock styles %}
+        <link rel="stylesheet" href="/styles/responsive.css">
+    </head>
+    <body>
+        {# Aqui se posiciona a variável criada no arquivo de cada página, cada qual com seu conteúdo
+        específico. Esta variável possui um nome em comum, mas seu conteúdo é diferente. #}
+        <div id="{{ bodyId }}">
+            {% block content %}{% endblock content %}
+        </div>
+        {% block modal %}{% endblock modal %}
+        {% block scripts %}{% endblock scripts %}
+    </body>
+</html>

@@ -1,0 +1,179 @@
+/* todo o corpo da página */
+#page-create-point{
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+/* cabeçalho contido no corpo */
+#page-create-point header{
+    margin-top: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* os conteúdos de link no header */
+#page-create-point header a{
+    color: var(--title-color);
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+}
+/* imagem que será inserida no bloco span */
+#page-create-point header a span{
+    margin-right: 16px;
+
+    background-image: url('../assets/arrow-left.svg');
+    width: 20px;
+    height: 23px;
+
+    display: flex;
+}
+/* todo o formulário */
+form{
+    margin: 80px auto;
+    background-color: white;
+    /*Prenchimento*/
+    padding: 45px;
+    border-radius: 8px;
+    margin-top: 80px;
+    max-width: 730px;
+}
+/* título do formulário */
+form h1{
+    font-size: 36px;
+}
+/* os grupos de elementos (no caso, 2) contidos dentro do corpo do forumulário */
+form fieldset{
+    margin-top: 64px;
+    border: 0;
+}
+/* os conteúdos no bloco legend */
+form legend{
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+/* os títulos do bloco legend */
+form legend h2{
+    font-size: 24px;
+}
+/* o span do bloco legend */
+form legend span{
+    font-size: 14px;
+    color: var(--title-color);
+}
+/* todos os campos de entradas de dados pelo usuário */
+form .field{
+    /* Para que os elementos de '.field' preencham lateralmente o espaço no bloco em que estão
+    contidos (no caso 'fieldset' usa-se o argumento 'flex' com o valor 1 */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+/* os grupos de field que estão agrupados dentro de uma classe .field-group */
+form .field-group{
+    display: flex;
+}
+/* todos os blocos input e select */
+form input, form select{
+    background-color: var(--input-color);
+    border: 0;
+    /* 'padding' é o preenchimento do elemento. No caso abaixo serão acrescentados 16px para
+    baixo e 24px nas laterais */
+    padding: 16px 24px;
+    font-size: 16px;
+    /* Caso queira retirar o ponteiro de digitação da caixa 'input' basta digitar o código:
+    outline: none; */
+    border-radius: 8px;
+}
+/* Alguns navegadores possuem certos entraves que impedem os elementos do tipo 'input' de 
+receberem a formatação que inserimos no CSS. Para que isso não ocorra, usamos os três códigos
+abaixo para resetar as funções padrões dos navegadores. */
+form select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+/* os textos label do formulário */
+form label{
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* Nesta linha, serão considarados apenas os '.field' dentro dos '.field-group', e, neste caso
+específico, o argumento 'form .field-group .field' referencia-se apenas ao primeiro dos dois
+'field' existentes no grupo ("address" e "state") enquanto o argumento '+ .field' refere-se
+ao segundo ("number" e "city") */
+form .field-group .field + .field{
+    margin-left: 24px;
+}
+/* formatação do botão de envio do formulário */
+form button{
+    /* Tamanho do botão */
+    width: 260px;
+    height: 56px;
+    /* Cores e bordas */
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    /* Formatação do texto */
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    /* Retirada da borda destacada padrão do botão */
+    border: 0;
+    /* Afastamento do botão aos objetos */
+    margin-top: 40px;
+    /* Tempo de transição de cores (ou outras propriedades possíveis) quando passar o mouse 
+    por cima do elemento, assim configurado pela linha 'form button:hover' */
+    transition: background-color 400ms;
+}
+/* evento que acontecerá ao botão ao passar o mouse por ele */
+form button:hover{
+    background-color: #2fb86e;
+}
+/* todo o bloco da a classe que contém os botões selecionáveis do segundo .field-group */
+.items-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+}
+/* para cada elemento da grade */
+.items-grid li{
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    border: 2px solid #f5f5f5;
+    list-style: none;
+    height: 180px;
+    padding: 32px 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    cursor: pointer;
+
+}
+/* para cada span de texto dos botões selecionáveis */
+.items-grid li span{
+    margin-top: 12px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    color: var(--title-color);
+}
+/* quando cada botão for selecionado receberá as formatações */
+.items-grid li.selected{
+    background: #e1faec;
+    border: 2px solid #34cb79;
+}
+/* adiciona os elementos img e span dos blocos li como sendo clicáveis */
+.items-grid li img,
+.items-grid li span{
+    pointer-events: none;
+}
