@@ -155,6 +155,8 @@ principal do corpo ('body') de cada arquivo #}
 {% block modal %}
     {% if saved %}
         {% include "partials/point-created.html" %}
+    {% elif erro %}
+        {% include "partials/erro.html" %}
     {% endif %}
 {% endblock modal %}
 
